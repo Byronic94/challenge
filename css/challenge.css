@@ -1,0 +1,149 @@
+body {
+    background: url(../image/challengeBG.jpg);
+    background-size: 100%;
+    font-family:arial;
+}
+#challengeForm {
+    margin: 10%;
+    position: relative;
+    top:100px;
+}
+#textarea {
+    background-color: #f8dea5;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border:2px solid #af4409;
+}
+.selectContainer {
+    font-weight: bold;
+    position:relative;
+    width:100%;
+    display:inline-block;
+    z-index:1000;
+    background:#ffb900;
+    border:2px solid #af4409;
+    border-radius: 5px;
+    margin-bottom:5px; 
+}
+
+.selectContainer .selectOption {
+    min-width:180px;
+    padding:0 5px;
+    line-height:25px;
+    height:25px;
+    white-space:nowrap;
+    overflow:hidden;
+    border:none;
+    width:250px;
+    z-index:1000
+}
+.selectContainer .shows {
+    width:20px;
+    height:20px;
+    position:absolute;
+    right:2px;
+    top:2px;
+    background:url(../image/select.png) no-repeat center center;
+    background-size: 100%;
+}
+.selectContainer ul {
+    position:absolute;
+    width:100%;
+    top:27px;
+    left:-1px;
+    display:none;
+    list-style-type:none; 
+    padding-left:0
+}
+.selectContainer ul li {
+    border-radius: 5px;
+    border:2px solid #af4409;
+    border-top:none;
+    line-height:25px;
+    width:auto;
+    background:#ffb900;
+    cursor:pointer
+}
+.selectContainer ul li:hover {
+    background:#F5F5F5
+}
+.selectContainer ul.dis {
+    display:block!important;
+}
+.selectContainer ul.undis {
+    display:noneimportant;
+}
+.zIndex {
+    z-index:10000!important
+}
+.picLabel{
+    width:20px;
+    height:20px;
+    position:absolute;
+    left:2px;
+    top:2px;
+    
+}
+
+#stake .picLabel{
+    background:url(../image/stake.png) no-repeat center center;
+    background-size: 100%;
+}
+
+#timer .picLabel{
+    background:url(../image/timer.png) no-repeat center center;
+    background-size: 100%;
+}
+.textLabel{
+position:absolute;
+ 
+left:28px;
+} 
+
+#sub{
+    position:absolute;
+    background: url(../image/challengeBTN.png) no-repeat;
+    background-size: 100%; 
+    vertical-align:middle; 
+    height:11%;
+    width:50%;
+    left:22%;
+    border-width: 0px;
+    top:450px;
+}
+
+#stakeText{
+    background-color: #f8dea5;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border:2px solid #af4409;
+}
+
+#stakeBTN{
+    float: right;
+    border:2px solid #af4409;
+    background:#ffb900;
+}
+
+
+
+#stakeDiv{
+    position:absolute;
+    width:80%;
+    top:200px;
+    margin: 10%;
+    display: none;
+    z-index:10001;
+}
+
+#fullbg { 
+background-color:gray; 
+left:0; 
+opacity:0.7; 
+position:absolute; 
+top:0; 
+z-index:10000; 
+filter:alpha(opacity=50); 
+-moz-opacity:0.7; 
+-khtml-opacity:0.7; 
+} 

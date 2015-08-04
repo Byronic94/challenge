@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>壹战到底</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/challenge.css">
+</head>
+<body>
+	<div id="fullbg"></div> 
+	<div id="stakeDiv">
+		<textarea id="stakeText" class="form-control" rows="4" placeholder="#编辑赌注#" ></textarea>
+        <button id="stakeBTN" class="btn">确定</button>
+    </div>
+	<form id="challengeForm">
+		<textarea id="textarea" class="form-control" rows="8" placeholder="#向自己发起挑战！#" ></textarea>
+		<div class="selectContainer">  
+            <span id="stake" class="selectOption gray"><span class="picLabel" ></span><span class="textLabel">赌注</span></span> 
+            <ul class="selectMenu">  
+                <li>裸奔呗</li>  
+                <li>请吃饭</li>  
+                <li id="edit">自行编辑</li>  
+            </ul>  
+            <span class="shows"></span>  
+        </div>  
+        <div class="selectContainer">  
+            <span id="timer" class="selectOption gray"><span class="picLabel" ></span><span class="textLabel">期限</span></span>  
+            <ul class="selectMenu">  
+                <li>10分钟</li>  
+                <li>一小时</li>  
+                <li>一天</li>  
+                <li>永久</li>   
+            </ul>  
+            <span class="shows"></span>  
+        </div>  
+	</form>
+	<button id="sub"></button>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/challenge.js"></script>
+</body>
+</html>
