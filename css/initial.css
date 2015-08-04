@@ -1,0 +1,16 @@
+body{
+    background: url(../image/background.jpg);
+    background-size: 100%; 
+}
+
+#sub{
+    position:absolute;
+    background: url(../image/button.png) no-repeat;
+    background-size: 100%; 
+    vertical-align:middle; 
+    height:11%;
+    width:50%;
+    left:22%;
+    border-width: 0px;
+    top:500px;
+}
