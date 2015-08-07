@@ -1,5 +1,5 @@
 body {
-    background: url(../image/challengeBG.jpg);
+    background: url(../image/challengeBG.jpg)  no-repeat;
     background-size: 100%;
     font-family:arial;
 }
@@ -82,7 +82,7 @@ div{
 textarea{
     width: 100%;
     background: #ffedad;
-    padding:2px 2px 2px 50px;
+    padding:2px 2px 2px 70px;
     border: 0px;
 }
 
@@ -106,7 +106,7 @@ textarea{
 
 #form{
     position: absolute;
-    top:7.4%;
+    top:3%;
     left: 8%;
     width:84%;
 }
@@ -115,7 +115,7 @@ textarea{
     width: 0; 
     height: 0; 
     border-top: 20px solid #ffa701;
-    border-right: 20px solid transparent; 
+    border-right: 10px solid transparent; 
     margin:0;
     padding: 0; 
 }
