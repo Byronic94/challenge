@@ -1,0 +1,100 @@
+body {
+    background: url(../image/challengeBG.jpg);
+    background-size: 100%;
+    font-size: 16px;
+}
+
+#outline{
+	position: absolute;
+    top:7.4%;
+    left: 8%;
+    width:84%;
+    text-align:center;
+}
+
+#face{
+	margin: 10px auto;
+	border-radius: 100px;
+	border: 2px solid #ffca1c;
+	height: 50px;
+	width: 50px;
+	background: url(../image/1.png);
+    background-size: 100%;
+}
+
+.firstline{
+	color: #b99212;
+	font-size: 1em;
+	margin-bottom: 0;
+}
+
+.secondline{
+	color: #ffca1c;
+	font-size: 1.6em;
+}
+
+#content{
+	margin-bottom: 20px;
+}
+
+#success{
+	position: absolute;
+	background: url(../image/success.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    left:8.6%;
+    top:60%;
+    height:15.8%;
+    border: 0;
+}
+
+#fail{
+	position: absolute;
+	background: url(../image/fail.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    right:8.6%;
+    top:60%;
+    height:15.8%;
+    border: 0;
+}
+
+#resultBg1{
+	position: absolute;
+	background: url(../image/successBG.png)  no-repeat;
+    background-size: 100%;
+    display: none;
+    z-index: 1000;
+}
+
+#resultBg2{
+	position: absolute;
+	background: url(../image/failBG.png)  no-repeat;
+    background-size: 100%;
+    display: none;
+    z-index: 1000;
+}
+
+@media screen and (max-device-height: 480px){
+    #success{
+	position: absolute;
+	background: url(../image/success.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    left:8.6%;
+    top:70%;
+    height:18%;
+    border: 0;
+}
+
+#fail{
+	position: absolute;
+	background: url(../image/fail.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    right:8.6%;
+    top:70%;
+    height:18%;
+    border: 0;
+}
+}

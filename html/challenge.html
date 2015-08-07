@@ -3,40 +3,68 @@
 <head>
 	<meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>壹战到底</title>
+    <title>壹校招一战到底</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/challenge.css">
 </head>
 <body>
-	<div id="fullbg"></div> 
-	<div id="stakeDiv">
-		<textarea id="stakeText" class="form-control" rows="4" placeholder="#编辑赌注#" ></textarea>
-        <button id="stakeBTN" class="btn">确定</button>
-    </div>
-	<form id="challengeForm">
-		<textarea id="textarea" class="form-control" rows="8" placeholder="#向自己发起挑战！#" ></textarea>
-		<div class="selectContainer">  
-            <span id="stake" class="selectOption gray"><span class="picLabel" ></span><span class="textLabel">赌注</span></span> 
-            <ul class="selectMenu">  
-                <li>裸奔呗</li>  
-                <li>请吃饭</li>  
-                <li id="edit">自行编辑</li>  
-            </ul>  
-            <span class="shows"></span>  
+    <div id="tipBg"></div>
+    <div id="form">
+        <div class="edit">
+            <div class="head">
+                <div class="label">
+                    类型
+                </div>
+                <div class="triangle">
+                </div>
+            </div>
+            <textarea rows="1" maxlength="7" placeholder="~如我要健身，我要变美"></textarea>  
         </div>  
-        <div class="selectContainer">  
-            <span id="timer" class="selectOption gray"><span class="picLabel" ></span><span class="textLabel">期限</span></span>  
-            <ul class="selectMenu">  
-                <li>10分钟</li>  
-                <li>一小时</li>  
-                <li>一天</li>  
-                <li>永久</li>   
-            </ul>  
-            <span class="shows"></span>  
+        <div class="edit">
+            <div class="head">
+                <div class="label">
+                    内容
+                </div>
+                <div class="triangle">
+                </div>
+            </div>
+
+            <textarea rows="2" maxlength="36" placeholder="请输入挑战内容，如明天我要早起"></textarea>  
         </div>  
-	</form>
-	<button id="sub"></button>
-	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+        <div class="edit">
+            <div class="head">
+                <div class="label">
+                    赌注
+                </div>
+                <div class="triangle">
+                </div>
+            </div>
+
+            <textarea rows="4" maxlength="28" placeholder="不成功便成仁，逼一下自己去完成挑战吧"></textarea>  
+        </div>  
+        <div class="edit">
+            <div class="head">
+                <div class="label">
+                    选一个响亮的标题
+                </div>
+                <div class="triangle">
+
+                </div>
+            </div>
+
+            <div class="selectContainer">  
+                <span class="selectOption gray">弘桂能在1分钟内吃两碗饭，你敢信?</span> 
+                <ul class="selectMenu">  
+                    <li>句式1</li>  
+                    <li>句式2</li>  
+                    <li>句式3</li>  
+                </ul>  
+                <span class="shows"></span>  
+            </div>  
+        </div>
+    </div>  
+    <button id="challengeGo"></button>
+    <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../js/challenge.js"></script>
 </body>
 </html>

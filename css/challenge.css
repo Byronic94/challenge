@@ -3,65 +3,46 @@ body {
     background-size: 100%;
     font-family:arial;
 }
-#challengeForm {
-    margin: 10%;
-    position: relative;
-    top:100px;
-}
-#textarea {
-    background-color: #f8dea5;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    border:2px solid #af4409;
-}
+
 .selectContainer {
-    font-weight: bold;
+    padding-top:23px; 
     position:relative;
     width:100%;
     display:inline-block;
     z-index:1000;
-    background:#ffb900;
-    border:2px solid #af4409;
-    border-radius: 5px;
-    margin-bottom:5px; 
+    background: #ffedad; 
 }
 
 .selectContainer .selectOption {
-    min-width:180px;
-    padding:0 5px;
-    line-height:25px;
-    height:25px;
+    line-height:21px;
+    height:21px;
     white-space:nowrap;
     overflow:hidden;
     border:none;
-    width:250px;
-    z-index:1000
+    z-index:1000;
 }
 .selectContainer .shows {
     width:20px;
     height:20px;
     position:absolute;
-    right:2px;
-    top:2px;
+    right: 2px;
     background:url(../image/select.png) no-repeat center center;
     background-size: 100%;
 }
 .selectContainer ul {
     position:absolute;
     width:100%;
-    top:27px;
-    left:-1px;
+    top:23px;
     display:none;
     list-style-type:none; 
-    padding-left:0
+    padding-left:0;
+    padding-right: 0;
 }
 .selectContainer ul li {
-    border-radius: 5px;
-    border:2px solid #af4409;
-    border-top:none;
-    line-height:25px;
+    border-bottom:2px solid #af4409;
+    line-height:21px;
     width:auto;
-    background:#ffb900;
+    background:#ffedad;
     cursor:pointer
 }
 .selectContainer ul li:hover {
@@ -74,76 +55,86 @@ body {
     display:noneimportant;
 }
 .zIndex {
-    z-index:10000!important
-}
-.picLabel{
-    width:20px;
-    height:20px;
-    position:absolute;
-    left:2px;
-    top:2px;
-    
+    z-index:1001!important
 }
 
-#stake .picLabel{
-    background:url(../image/stake.png) no-repeat center center;
-    background-size: 100%;
-}
-
-#timer .picLabel{
-    background:url(../image/timer.png) no-repeat center center;
-    background-size: 100%;
-}
-.textLabel{
-position:absolute;
- 
-left:28px;
-} 
-
-#sub{
+#challengeGo{
     position:absolute;
     background: url(../image/challengeBTN.png) no-repeat;
     background-size: 100%; 
     vertical-align:middle; 
-    height:11%;
-    width:50%;
-    left:22%;
+    width:49%;
+    height: 11%;
+    left:23%;
     border-width: 0px;
-    top:450px;
+    top:83%;
 }
 
-#stakeText{
-    background-color: #f8dea5;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    border:2px solid #af4409;
+div{
+    text-align:center;
 }
 
-#stakeBTN{
-    float: right;
-    border:2px solid #af4409;
-    background:#ffb900;
+.edit{
+    margin: 10px 0 0 0;
+    position: relative;
+    
+}
+textarea{
+    width: 100%;
+    background: #ffedad;
+    padding:2px 2px 2px 50px;
+    border: 0px;
+}
+
+.label{
+    height: 20px;
+    float: left;
+    color: #702f04;
+    background: #ffa701;
+    border-radius: 0px;
+    margin: 0;
+    padding-right: 0;
+}
+
+.head{
+    z-index:1002;
+    position: absolute;
+    left: -3px;
+    top:-1px;
+    overflow:hidden;
+}
+
+#form{
+    position: absolute;
+    top:7.4%;
+    left: 8%;
+    width:84%;
+}
+.triangle{
+    float:left;
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid #ffa701;
+    border-right: 20px solid transparent; 
+    margin:0;
+    padding: 0; 
 }
 
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    　　color:#efda8f;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    　　color:#efda8f;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    　　color:#efda8f;
+}
 
-#stakeDiv{
-    position:absolute;
-    width:80%;
-    top:200px;
-    margin: 10%;
+#tipBg{
+    background: url(../image/tipBG.png);
+    background-size: 100%;
     display: none;
-    z-index:10001;
+    z-index:1003;
+    position:absolute; 
 }
-
-#fullbg { 
-background-color:gray; 
-left:0; 
-opacity:0.7; 
-position:absolute; 
-top:0; 
-z-index:10000; 
-filter:alpha(opacity=50); 
--moz-opacity:0.7; 
--khtml-opacity:0.7; 
-} 
