@@ -2,28 +2,48 @@ body{
     background: url(../image/background.jpg)  no-repeat;
     background-size: 100%; 
 }
-
-#challengeSelf{
+button{
+    color:#44180b;
+    padding: 3% 5% 5% 0;
+    font-weight: bold;
+    font-size: 1.7em;
     position:absolute;
-    background: url(../image/challengeSelfButton.png) no-repeat;
+    background: url(../image/btn.png) no-repeat;
     background-size: 100%; 
     vertical-align:middle; 
     width:49%;
     height: 10%;
     left:23%;
     border-width: 0px;
+}
+#challengeSelf{
     top:72%;
 }
 
 #challengeFriends{
-    position:absolute;
-    background: url(../image/challengeFriendsButton.png) no-repeat;
-    background-size: 100%; 
-    vertical-align:middle; 
-    width:49%;
-    left:23%;
-    height: 10%;
-    border-width: 0px;
     top:84%;
 }
 
+#ad{
+    width: 100%;
+    position: absolute;
+    top:100%;
+    background: #14CC74; 
+    height:28px;  
+}
+
+a{
+    font-weight: bold;
+    color: white;
+    float: left;
+    margin: auto;
+}
+
+#logo{
+    background: url(../image/logo.png)  no-repeat;
+    background-size: 100%;
+    margin-right: 20px;
+    width: 75px;
+    height:26.5px;
+    float: left;
+}

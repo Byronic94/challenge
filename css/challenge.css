@@ -1,66 +1,23 @@
 body {
-    background: url(../image/challengeBG.jpg)  no-repeat;
+    background: url(../image/recordBG.jpg)  no-repeat;
     background-size: 100%;
     font-family:arial;
 }
 
-.selectContainer {
-    padding-top:23px; 
-    position:relative;
-    width:100%;
-    display:inline-block;
-    z-index:1000;
-    background: #ffedad; 
-}
-
-.selectContainer .selectOption {
-    line-height:21px;
-    height:21px;
-    white-space:nowrap;
-    overflow:hidden;
-    border:none;
-    z-index:1000;
-}
-.selectContainer .shows {
-    width:20px;
-    height:20px;
-    position:absolute;
-    right: 2px;
-    background:url(../image/select.png) no-repeat center center;
-    background-size: 100%;
-}
-.selectContainer ul {
-    position:absolute;
-    width:100%;
-    top:23px;
-    display:none;
-    list-style-type:none; 
-    padding-left:0;
-    padding-right: 0;
-}
-.selectContainer ul li {
-    border-bottom:2px solid #af4409;
-    line-height:21px;
-    width:auto;
-    background:#ffedad;
-    cursor:pointer
-}
-.selectContainer ul li:hover {
-    background:#F5F5F5
-}
-.selectContainer ul.dis {
-    display:block!important;
-}
-.selectContainer ul.undis {
-    display:noneimportant;
-}
-.zIndex {
-    z-index:1001!important
+#recommend{
+    padding-top: 8%;
+    padding-left: 20px;
+    background: #ffedad;
+    text-align:left;
 }
 
 #challengeGo{
+    color:#44180b;
+    padding: 3% 5% 5% 0;
+    font-weight: bold;
+    font-size: 1.7em;
     position:absolute;
-    background: url(../image/challengeBTN.png) no-repeat;
+    background: url(../image/btn.png) no-repeat;
     background-size: 100%; 
     vertical-align:middle; 
     width:49%;
@@ -75,16 +32,18 @@ div{
 }
 
 .edit{
-    margin: 10px 0 0 0;
+    margin: 4.5% 0 0 0;
     position: relative;
     
 }
 textarea{
     width: 100%;
     background: #ffedad;
-    padding:2px 2px 2px 70px;
+    padding:2px 2px 2px 20px;
     border: 0px;
+    text-indent: 3.5em;
 }
+
 
 .label{
     height: 20px;
@@ -105,8 +64,9 @@ textarea{
 }
 
 #form{
+    color: #8a3c06;
     position: absolute;
-    top:3%;
+    top:6%;
     left: 8%;
     width:84%;
 }
@@ -122,13 +82,18 @@ textarea{
 
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    　　color:#efda8f;
+    color:    #dbc268;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #dbc268;
+   opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    　　color:#efda8f;
+   color:    #dbc268;
+   opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    　　color:#efda8f;
+   color:    #dbc268;
 }
 
 #tipBg{
@@ -137,4 +102,28 @@ textarea{
     display: none;
     z-index:1003;
     position:absolute; 
+}
+
+#ad{
+    width: 100%;
+    position: absolute;
+    top:100%;
+    background: #14CC74; 
+    height:28px;  
+}
+
+a{
+    font-weight: bold;
+    color: white;
+    float: left;
+    margin: auto;
+}
+
+#logo{
+    background: url(../image/logo.png)  no-repeat;
+    background-size: 100%;
+    margin-right: 20px;
+    width: 75px;
+    height:26.5px;
+    float: left;
 }
