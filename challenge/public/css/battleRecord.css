@@ -1,0 +1,30 @@
+body {
+    background: url(../image/challengeBG.jpg);
+    background-size: 100%
+}
+
+#accept{
+	background: #ffca1c;
+    border: 2px solid #ac3208;
+    border-radius: 5px;
+    width: 60%;
+    position: absolute;
+    top:80%;
+    left: 20%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#reject{
+	background: #ffca1c;
+    border: 2px solid #ac3208;
+    border-radius: 5px;
+    width: 60%;
+    position: absolute;
+    top:90%;
+    left: 20%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
