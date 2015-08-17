@@ -38,15 +38,15 @@ $(document).ready(function(){
             },
             dataType: 'json',
         });
-    }   
+}   
 
 
-	 $("#challengeGo").click(function(){
-        $("#uid").val(1);
-        var timestamp = parseInt(Date.parse(new Date())/1000);
-        $("#timestamp").val(timestamp);
-        $("#isSelf").val(true);
-        var options = { 
+$("#challengeGo").click(function(){
+    $("#uid").val(1);
+    var timestamp = parseInt(Date.parse(new Date())/1000);
+    $("#timestamp").val(timestamp);
+    $("#isSelf").val(true);
+    var options = { 
             target:'#formRes', //后台将把传递过来的值赋给该元素 
             url:'/challengecommit', //提交给哪个执行 
             type:'GET', 
@@ -54,7 +54,7 @@ $(document).ready(function(){
                 window.location.href='/challengecheck?uid='+data.uid+'&cid='+data.cid+'&timestamp='+data.timestamp+'&isSelf='+data.isSelf;
                 //$.cookie("cid", $('#formRes').text());
             } ,
-             error:function(XMLHttpRequest, textStatus, errorThrown){
+            error:function(XMLHttpRequest, textStatus, errorThrown){
                 console.log(XMLHttpRequest);
                 console.log(textStatus);
                 console.log(errorThrown);
