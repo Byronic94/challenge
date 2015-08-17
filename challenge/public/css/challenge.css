@@ -90,15 +90,15 @@ textarea{
     color:    #dbc268;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #dbc268;
-   opacity:  1;
+ color:    #dbc268;
+ opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #dbc268;
-   opacity:  1;
+ color:    #dbc268;
+ opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #dbc268;
+ color:    #dbc268;
 }
 
 #tipBg{

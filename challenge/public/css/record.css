@@ -233,28 +233,28 @@ a{
 
 @media screen and (max-device-height: 480px){
     #success{
-	position: absolute;
-	background: url(../image/success.png)  no-repeat;
-    background-size: 100%;
-    width: 22%;
-    left:8.6%;
-    top:70%;
-    height:18%;
-    border: 0;
-}
+       position: absolute;
+       background: url(../image/success.png)  no-repeat;
+       background-size: 100%;
+       width: 22%;
+       left:8.6%;
+       top:70%;
+       height:18%;
+       border: 0;
+   }
 
-#fail{
-	position: absolute;
-	background: url(../image/fail.png)  no-repeat;
-    background-size: 100%;
-    width: 22%;
-    right:8.6%;
-    top:70%;
-    height:18%;
-    border: 0;
-}
+   #fail{
+       position: absolute;
+       background: url(../image/fail.png)  no-repeat;
+       background-size: 100%;
+       width: 22%;
+       right:8.6%;
+       top:70%;
+       height:18%;
+       border: 0;
+   }
 
-#like{
+   #like{
     position: absolute;
     background: url(../image/like.png)  no-repeat;
     background-size: 100%;
