@@ -122,9 +122,12 @@ class ChallengeController extends Controller {
     }
 
     public function checkchallenge(Request $request) {
-    	$tos = $request->input('isSelf');
+    	$tos = $request->input('isSelf'); 
         $uid = $request->input('uid');
         $cid = $request->input('cid');
+        if (isset($_GET['sh_uid'])) {
+            $sh_uid = $request->input('sh_uid');
+        }
         $ts = time();
 
         $ch = DB::table('challenges')
@@ -134,7 +137,7 @@ class ChallengeController extends Controller {
                     ->first();
         $ach = DB::table('acchallenge')
                     ->join('user', 'acchallenge.to_uid', '=', 'user.uid')
-                    ->select('uid', 'username', 'imgurl', 'ups', 'downs', 'success')
+                    ->select('acid','uid','username','imgurl','ups','downs','success','imgpath')
                     ->where('cid', $cid)
                     ->get();
         $flist = DB::table('comments')
@@ -149,39 +152,76 @@ class ChallengeController extends Controller {
                     ->get();
 
         $state = 0;
+        $flag = 1;
         if (count($ach) == 0) $state = 2;
         $aci = null;
+        $sh_ac = null;
         foreach ($ach as $acitem) {
             if ($acitem->success == -1) $state = 1;
+
             if ($acitem->uid == $uid) {
+                if ($acitem->imgpath != null) $imgpath = $acitem->imgpath;
                 $aci = $acitem;
-                break;
             }
+            if (isset($sh_uid))
+                if ($acitem->uid == $sh_uid) {
+                    $flag = 2;
+                    $sh_ac = $acitem;
+                }
         }
+        $timeout = 0;
         if ($state != 0) {
             if ($ts > $ch->timestamp+3*24*3600) {
                 $state = 0;
+                $timeout = 1;
             }
         }
-
+        if (isset($sh_uid)) {
+            if ($ch->uid == $sh_uid) {
+                $flag = 1;
+            }
+        }
+        
         if ($ch->uid == $uid) {
             $type = 0;
         } elseif (count($ach) == 0 || !$aci) {
             $type = 2;
         } else {
             $type = 1;
+            $acid = $aci->acid;
             $toname = $aci->username;
             $tourl = $aci->imgurl;
             $ups = $aci->ups;
             $downs = $aci->downs;
             $success = $aci->success;
+            $imgpath = $aci->imgpath;
+        }
+        if ($flag == 1) {
+            $imgurl = $ch->imgurl;
+        } elseif ($flag == 2) {
+            $imgurl = $sh_ac->imgurl;
         }
         
-        if ($type != 1) 
+        if ($type == 0) 
             $data = array('type'=>$type,
                       'state'=>$state,
                       'from_name'=>$ch->username,
-                      'from_url'=>$ch->imgurl,
+                      'imgurl'=>$ch->imgurl,
+                      'up'=>$ch->ups,
+                      'down'=>$ch->downs,
+                      'aclist'=>$ach,
+                      'name'=>$ch->name,
+                      'keyword'=>$ch->keyword,
+                      'content'=>$ch->content,
+                      'bet'=>$ch->bet,
+                      'timestamp'=>$ch->timestamp,
+                      'commentlist'=>[$flist, $tlist]
+                      );
+        elseif ($type == 2)
+            $data = array('type'=>$type,
+                      'state'=>$state,
+                      'from_name'=>$ch->username,
+                      'imgurl'=>$imgurl,
                       'up'=>$ch->ups,
                       'down'=>$ch->downs,
                       'aclist'=>$ach,
@@ -197,8 +237,8 @@ class ChallengeController extends Controller {
                       'state'=>$state,
                       'from_name'=>$ch->username,
                       'to_name'=>$toname,
-                      'from_url'=>$ch->imgurl,
-                      'to_url'=>$tourl,
+                      'imgurl'=>$imgurl,
+                      'acid'=>$acid,
                       'up'=>$ups,
                       'down'=>$downs,
                       'success'=>$success,
@@ -207,9 +247,16 @@ class ChallengeController extends Controller {
                       'content'=>$ch->content,
                       'bet'=>$ch->bet,
                       'timestamp'=>$ch->timestamp,
+                      'imgpath'=>$imgpath,
                       'commentlist'=>[$flist, $tlist]
                       );
 //        return response()->json($data);
+        if ($state == 0) {
+            if ($timeout == 1) $data['timeout'] = 1;
+            else $data['timeout'] = 0;
+            $data['isSelf']=$tos;
+            return view('result', $data);
+        }
         if (!$tos) return view('challengeOthersState', $data);
         return view('challengeSelfState', $data);
     }
@@ -233,38 +280,64 @@ class ChallengeController extends Controller {
                         ['cid'=>$cid,'from_uid'=>$from_uid,'to_uid'=>$to_uid,'content'=>$content],
                         'comid'
                         );
+
+        $name = DB::table('user')->select('username')->where('uid',$from_uid)->first();
         if (!$a) return response()->json(array('success'=>false));
-        return response()->json(array('success'=>true));
+        return response()->json(array('success'=>true,'username'=>$name));
     }
 
     public function acceptchallenge(Request $request) {
     	$uid = $request->input('uid');
         $cid = $request->input('cid');
+        $success = $request->input('success');
 
         // 每接受一个挑战插入一条数据
         $tbl = DB::table('acchallenge');
+
+        if ($success == 0) {
+            $co = $tbl->where('cid', $cid)->count();
+            if ($co > 0) return response()->json(['state'=>1]);
+            else return response()->json(['state'=>0]);
+        }
+
         $count = $tbl->where('cid', $cid)
-                     ->where('to_uid', $to_uid)
+                     ->where('to_uid', $uid)
                      ->count();
         if ($count == 0) {
-            $from_uid = $tbl->select('from_uid')
-                    ->where('cid', $cid)
-                    ->first();
-            $a = $tbl->insertGetId(
-                    ['cid'=>$cid,'from_uid'=>$from_uid,'to_uid'=>$uid], 'acid'
-                                   );
-            if (!$a) return response()->json(array('success'=>false));
-//            return response()->json(array('success'=>1));
+            $from_uid = DB::table('challenges')
+                            ->where('cid', $cid)
+                            ->pluck('uid');
+            // return response()->json($from_uid);
+            $tbl->insertGetId(
+                    ['cid'=>$cid,'from_uid'=>$from_uid,'to_uid'=>$uid], 'acid');
         }
 //        return response()->json(array('success'=>2));
-        return response()->json(['uid'=>$uid,'cid'=>$cid,'isSelf'=>false]);
+        return response()->json(['uid'=>$uid,'cid'=>$cid,'isSelf'=>0,'state'=>1]);
     }
 
     public function shutdownchallenge(Request $request) {
     	$uid = $request->input('uid');
         $cid = $request->input('cid');
+        $acid = $request->input('acid');
         $success = $request->input('success');
         $tbl = DB::table('acchallenge');
+        if (Request::hasFile('photo')) {
+            $file = Request::file('photo');
+            if ($file->isValid()) {
+                $mime = $file->getClientMimeType();
+                $destinationPath = 'uploadimgs/';
+                $filename = $cid.'_'.time().$mime;
+                $file->move($destinationPath, $fileName);
+                if ($type = 0) {
+                    $tbl->where('cid', $cid)->where('from_uid', $uid)
+                        ->update(['imgpath'=>$destinationPath.$filename]);
+                } else {
+                    $tbl->where('cid', $cid)->where('to_uid', $uid)
+                        ->update(['imgpath'=>$destinationPath.$filename]);
+                }
+            }
+        }
+        
         $chl = $tbl->select('from_uid','to_uid')
                     ->where('cid', $cid)
                     ->get();
