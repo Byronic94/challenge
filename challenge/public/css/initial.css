@@ -1,5 +1,5 @@
 body{
-    background: url(../image/background.jpg)  no-repeat;
+    background: url(../images/background.jpg)  no-repeat;
     background-size: 100%; 
 }
 button{
@@ -8,7 +8,7 @@ button{
     font-weight: bold;
     font-size: 1.7em;
     position:absolute;
-    background: url(../image/btn.png) no-repeat;
+    background: url(../images/btn.png) no-repeat;
     background-size: 100%; 
     vertical-align:middle; 
     width:49%;
@@ -40,10 +40,41 @@ a{
 }
 
 #logo{
-    background: url(../image/logo.png)  no-repeat;
+    background: url(../images/logo.png)  no-repeat;
     background-size: 100%;
     margin-right: 20px;
     width: 75px;
     height:26.5px;
     float: left;
+}
+
+.hidden{
+    display: none;
+}
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+body{
+    background: url(../images/background.jpg) 0px -60px no-repeat;
+    background-size: 100%;
+}
+
+#challengeSelf{
+    top:68%;
+}
+
+#challengeFriends{
+    top:80%;
+}
+
+button{
+    font-size: 1.5em;
+    position:absolute;
+    background: url(../images/btn.png) no-repeat;
+    background-size: 100%; 
+    vertical-align:middle; 
+    width:49%;
+    height: 12%;
+    left:23%;
+    border-width: 0px;
+}
 }

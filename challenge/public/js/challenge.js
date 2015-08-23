@@ -1,4 +1,61 @@
 $(document).ready(function(){
+
+
+    $.ajax({
+        type: 'GET',
+        url: '/getwxsignpack' ,
+        success: function(data){
+         wx.config({
+            debug: false, 
+            appId: data.appId, 
+            timestamp: data.timestamp, 
+            nonceStr: data.nonceStr, 
+            signature: data.signature,
+            jsApiList: [
+            'checkJsApi',    
+            'onMenuShareTimeline',    
+            'onMenuShareAppMessage',    
+            'onMenuShareQQ',    
+            'onMenuShareWeibo',    
+            'hideMenuItems',    
+            'showMenuItems',    
+            'hideAllNonBaseMenuItem',    
+            'showAllNonBaseMenuItem',    
+            'translateVoice',    
+            'startRecord',    
+            'stopRecord',    
+            'onRecordEnd',    
+            'playVoice',    
+            'pauseVoice',    
+            'stopVoice',    
+            'uploadVoice',    
+            'downloadVoice',    
+            'chooseImage',    
+            'previewImage',    
+            'uploadImage',    
+            'downloadImage',    
+            'getNetworkType',    
+            'openLocation',    
+            'getLocation',    
+            'hideOptionMenu',    
+            'showOptionMenu',    
+            'closeWindow',    
+            'scanQRCode',    
+            'chooseWXPay',    
+            'openProductSpecificView',    
+            'addCard',    
+            'chooseCard',    
+            'openCard' 
+            ]
+        });
+        } ,
+        error:function(XMLHttpRequest, textStatus, errorThrown){
+            console.log(XMLHttpRequest);
+            console.log(textStatus);
+            console.log(errorThrown)
+        }
+    }); 
+
     var target = '/challengelist';
     getMoreInfo();
     setInterval (getMoreInfo, 200000);
@@ -38,23 +95,22 @@ $(document).ready(function(){
             },
             dataType: 'json',
         });
-}   
+    }   
 
 
-$("#challengeGo").click(function(){
-    $("#uid").val(1);
-    var timestamp = parseInt(Date.parse(new Date())/1000);
-    $("#timestamp").val(timestamp);
-    $("#isSelf").val(true);
-    var options = { 
+	 $("#challengeGo").click(function(){
+        $("#uid").val($.cookie('uid'));
+        var timestamp = parseInt(Date.parse(new Date())/1000);
+        $("#timestamp").val(timestamp);
+        $("#isSelf").val(1);
+        var options = { 
             target:'#formRes', //后台将把传递过来的值赋给该元素 
             url:'/challengecommit', //提交给哪个执行 
             type:'GET', 
             success: function(data){ 
                 window.location.href='/challengecheck?uid='+data.uid+'&cid='+data.cid+'&timestamp='+data.timestamp+'&isSelf='+data.isSelf;
-                //$.cookie("cid", $('#formRes').text());
             } ,
-            error:function(XMLHttpRequest, textStatus, errorThrown){
+             error:function(XMLHttpRequest, textStatus, errorThrown){
                 console.log(XMLHttpRequest);
                 console.log(textStatus);
                 console.log(errorThrown);
@@ -76,5 +132,77 @@ $("#challengeGo").click(function(){
             $('#challengeForm').ajaxSubmit(options);
         } 
         
+    });
+});
+
+
+wx.ready(function () {
+    var sharetitle =  '壹校招一战到底，你也来试试？';
+    var sharedesc = '只需30秒，向身边人或自己发出挑战，让大家一起来见证你的挑战历程！';
+    var sharelink = '/authorize/0/0/1';
+        wx.onMenuShareTimeline({
+        title: sharetitle,
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+
+        },
+        cancel: function () { 
+
+        }
+    });
+
+
+    wx.onMenuShareAppMessage({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        type: 'link', // 分享类型,music、video或link，不填默认为link
+        success: function () { 
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+
+    wx.onMenuShareQQ({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+       },
+       cancel: function () { 
+           // 用户取消分享后执行的回调函数
+       }
+    });
+    
+    wx.onMenuShareWeibo({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+        },
+       cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    
+    wx.onMenuShareQZone({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+       },
+       cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
     });
 });

@@ -1,0 +1,111 @@
+#ad{
+    width: 100%;
+    position: absolute;
+    top:100%;
+    background: #14CC74; 
+    height:28px;  
+}
+
+a{
+    font-weight: bold;
+    color: white;
+    float: left;
+    margin: auto;
+}
+
+#logo{
+    background: url(../images/logo.png)  no-repeat;
+    background-size: 100%;
+    margin-right: 20px;
+    width: 75px;
+    height:26.5px;
+    float: left;
+}
+
+body{
+    background: url(../images/resultBG.png);
+    background-size: 100%;
+    text-align: center;
+}
+
+#success{
+    background: url(../images/resultS.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left:20%;
+    top:10%;
+    width:60%;
+    height:18%;
+}
+
+#fail{
+    background: url(../images/resultF.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left:20%;
+    top:10%;
+    width:60%;
+    height:18%;
+}
+
+#outline{
+    position: absolute;
+    left:10%;
+    top:35%;
+    width:80%;
+}
+
+#face{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ffca1c;
+    border-radius: 100px;
+    background-size: 100%;
+    margin:0 auto;
+    position: relative;
+    top:-30px;
+}
+
+.firstline{
+    color: #b99212;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.secondline{
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+#content{
+    margin-bottom: 2%;
+}
+
+#evidence{
+    max-width:231px;
+    max-height: 157px;
+    background-size: 100%;
+    margin:0 auto;
+    margin-bottom: 2%;
+}
+
+#back{
+    background: #ffca1c;
+    border: 2px solid #ac3208;
+    border-radius: 5px;
+    margin:0 auto;
+    width: 50%;
+}
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+body{
+    background: url(../images/resultBG.png) 0px -60px no-repeat;
+    background-size: 100%;
+}
+#outline{
+    top:30%;
+}
+#success,#fail{
+    top:5%;
+}
+}

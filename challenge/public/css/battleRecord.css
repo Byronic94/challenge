@@ -1,5 +1,5 @@
 body {
-    background: url(../image/challengeBG.jpg);
+    background: url(../images/challengeBG.jpg);
     background-size: 100%
 }
 
@@ -27,4 +27,20 @@ body {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
+}
+
+@media screen and (max-device-height: 480px){
+#accept{
+    position: absolute;
+    top:95%;
+}
+#reject{
+    position: absolute;
+    top:105%;
+}
+#ad{
+    position: absolute;
+    top:115%;
+}
+
 }
