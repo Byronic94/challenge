@@ -1,0 +1,46 @@
+body {
+    background: url(../image/challengeBG.jpg);
+    background-size: 100%
+}
+
+#accept{
+	background: #ffca1c;
+    border: 2px solid #ac3208;
+    border-radius: 5px;
+    width: 60%;
+    position: absolute;
+    top:80%;
+    left: 20%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#reject{
+	background: #ffca1c;
+    border: 2px solid #ac3208;
+    border-radius: 5px;
+    width: 60%;
+    position: absolute;
+    top:90%;
+    left: 20%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+@media screen and (max-device-height: 480px){
+#accept{
+    position: absolute;
+    top:95%;
+}
+#reject{
+    position: absolute;
+    top:105%;
+}
+#ad{
+    position: absolute;
+    top:115%;
+}
+
+}

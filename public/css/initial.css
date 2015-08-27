@@ -1,0 +1,80 @@
+body{
+    background: url(../image/background.jpg)  no-repeat;
+    background-size: 100%; 
+}
+button{
+    color:#44180b;
+    padding: 3% 5% 5% 0;
+    font-weight: bold;
+    font-size: 1.7em;
+    position:absolute;
+    background: url(../image/btn.png) no-repeat;
+    background-size: 100%; 
+    vertical-align:middle; 
+    width:49%;
+    height: 10%;
+    left:23%;
+    border-width: 0px;
+}
+#challengeSelf{
+    top:72%;
+}
+
+#challengeFriends{
+    top:84%;
+}
+
+#ad{
+    width: 100%;
+    position: absolute;
+    top:100%;
+    background: #14CC74; 
+    height:28px;  
+}
+
+a{
+    font-weight: bold;
+    color: white;
+    float: left;
+    margin: auto;
+}
+
+#logo{
+    background: url(../image/logo.png)  no-repeat;
+    background-size: 100%;
+    margin-right: 20px;
+    width: 75px;
+    height:26.5px;
+    float: left;
+}
+
+.hidden{
+    display: none;
+}
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+body{
+    background: url(../image/background.jpg) 0px -60px no-repeat;
+    background-size: 100%;
+}
+
+#challengeSelf{
+    top:68%;
+}
+
+#challengeFriends{
+    top:80%;
+}
+
+button{
+    font-size: 1.5em;
+    position:absolute;
+    background: url(../image/btn.png) no-repeat;
+    background-size: 100%; 
+    vertical-align:middle; 
+    width:49%;
+    height: 12%;
+    left:23%;
+    border-width: 0px;
+}
+}

@@ -1,0 +1,343 @@
+body {
+    background: url(../image/recordBG.jpg);
+    background-size: 100%;
+    font-size: 16px;
+}
+
+#outline{
+	position: absolute;
+    top:3%;
+    left: 8%;
+    width:84%;
+    text-align:center;
+}
+
+#face{
+	margin: 10px auto;
+	border-radius: 100px;
+	border: 2px solid #ffca1c;
+	height: 50px;
+	width: 50px;
+    background-size: 100%;
+}
+
+.firstline{
+	color: #b99212;
+	font-size: 1em;
+	margin-bottom: 0;
+}
+
+.secondline{
+	color: #ffca1c;
+	font-size: 1.6em;
+}
+
+#content{
+	margin-bottom: 5%;
+}
+
+
+.hidden{
+    display: none;
+}
+#success{
+	position: absolute;
+	background: url(../image/success.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    left:8.6%;
+    top:60%;
+    height:16.5%;
+    border: 0;
+}
+
+#fail{
+	position: absolute;
+	background: url(../image/fail.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    right:8.6%;
+    top:60%;
+    height:16.5%;
+    border: 0;
+}
+
+#state{
+    background: #ffca1c;
+    border: 2px solid #ac3208;
+    border-radius: 5px;
+    width: 80%;
+    position: absolute;
+    top:80%;
+    left: 10%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#upload{
+    display: none;
+    background: #ffca1c;
+    border: 2px solid #ac3208;
+    border-radius: 5px;
+    width: 90%;
+    position: absolute;
+    top:80%;
+    left: 5%;
+    text-align: center;
+    font-size: 0.5em;
+    padding: 2%;
+}
+
+#imgurl{
+    float: left;
+    width:85%;
+    margin-right: 5%;
+    background: #ffedad;
+}
+
+#choose{
+    background: #ffca1c;
+    border-radius: 5px;
+    border: 2px solid #ac3208;
+    float: left;
+    width:8%;
+}
+
+#submit{
+    background: #ffca1c;
+    border-radius: 5px;
+    border: 2px solid #ac3208;
+    margin-top: 2%;
+}
+
+
+#currentState{
+    color: white;
+    border: 0;
+    text-align: center;
+}
+
+#like{
+    position: absolute;
+    background: url(../image/like.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    left:8.6%;
+    top:60%;
+    height:16.5%;
+    border: 0;
+}
+
+#unlike{
+    position: absolute;
+    background: url(../image/unlike.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    right:8.6%;
+    top:60%;
+    height:16.5%;
+    border: 0;
+}
+
+
+#resultBg1{
+	position: absolute;
+	background: url(../image/successBG.png)  no-repeat;
+    background-size: 100%;
+    display: none;
+    z-index: 10001;
+}
+
+#resultBg2{
+	position: absolute;
+	background: url(../image/failBG.png)  no-repeat;
+    background-size: 100%;
+    display: none;
+    z-index: 10001;
+}
+
+#ad{
+    width: 100%;
+    position: absolute;
+    top:100%;
+    background: #14CC74; 
+    height:28px;  
+}
+
+a{
+    font-weight: bold;
+    color: white;
+    float: left;
+    margin: auto;
+}
+
+#comment{
+    border-top: 1px solid #ffca1c;
+    background-color:#c66402; 
+    z-index:10000; 
+    position:absolute; 
+    top:83%;
+    bottom: 100%;
+    width:100%;
+    height:17%;
+    padding: 5%;
+    font-size: 14px;
+    color: white;
+    overflow:scroll;
+}
+
+#commentList{
+    margin-top:10px;
+    padding: 0;
+
+}
+
+.singleComment{
+    list-style-type: none;
+    clear: both;
+}
+
+.smallFace{
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    border: 1px solid #ffca1c;
+    background-size: 100%;
+    margin-right:5%; 
+    float: left;
+}
+
+.smallComment{
+    height:35px;   
+    line-height:35px; 
+    overflow:hidden;     
+    margin:auto 5% auto auto;
+    float: left;
+}
+
+.reply{
+    height:35px;   
+    line-height:35px;   
+    float: left;
+}
+
+#replyLine{
+    background: black;
+    position:absolute; 
+    top:95%;
+    bottom: 100%;
+    width:100%;
+    height:5%;
+    z-index: 10000;
+    padding: 5px;
+    display: none;
+}
+
+#replyLine input{
+    float: left;
+    border-radius: 5px 0 0 5px;
+    height: 100%;
+    width:85%;
+    margin-right:0;
+    border: 0;
+}
+
+#replyBTN{
+    height: 100%;
+    width:15%;
+    border: 0;
+    float:left;
+    margin-left: 0; 
+    background: #ffca1c;
+    border-radius: 0 5px 5px 0;
+}
+
+#back{
+    background: url(../image/back.png)  no-repeat;
+    background-size: 100%;
+    height:30px;
+    width: 98px;
+    border: 0;
+}
+
+#logo{
+    background: url(../image/logo.png)  no-repeat;
+    background-size: 100%;
+    margin-right: 20px;
+    width: 75px;
+    height:26.5px;
+    float: left;
+}
+
+@media screen and (max-device-height: 480px){
+    #success{
+	position: absolute;
+	background: url(../image/success.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    left:8.6%;
+    top:70%;
+    height:18%;
+    border: 0;
+}
+
+#fail{
+	position: absolute;
+	background: url(../image/fail.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    right:8.6%;
+    top:70%;
+    height:18%;
+    border: 0;
+}
+
+#like{
+    position: absolute;
+    background: url(../image/like.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    left:8.6%;
+    top:70%;
+    height:19%;
+    border: 0;
+}
+
+#unlike{
+    position: absolute;
+    background: url(../image/unlike.png)  no-repeat;
+    background-size: 100%;
+    width: 22%;
+    right:8.6%;
+    top:70%;
+    height:19%;
+    border: 0;
+}
+
+}
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+    #comment{
+        position: absolute;
+        top:95%;
+    }
+    #upload{
+        position: absolute;
+        top:95%;
+    }
+    #ad{
+        position: absolute;
+        top:112%;
+    }
+    #replyLine{
+        position: absolute;
+        top:105%;
+        bottom: 112%;
+        height:7%;
+    }
+    #state{
+        position: absolute;
+        top:95%;
+    }
+}
