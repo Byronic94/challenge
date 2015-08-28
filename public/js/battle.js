@@ -107,9 +107,8 @@ $(document).ready(function(){
             target:'#formRes', //后台将把传递过来的值赋给该元素 
             url:'/challengecommit', //提交给哪个执行 
             type: 'GET',
-            clearForm: true,
-            resetForm: true,
             success: function(){ 
+                alert("lslsls");
                 var bh = $(window).height();
                 var bw = $(window).width(); 
                 $("#resultBg").css({ 

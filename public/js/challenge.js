@@ -109,7 +109,6 @@ $(document).ready(function(){
             type:'GET', 
             success: function(data){ 
                 window.location.href='/challengecheck?uid='+data.uid+'&cid='+data.cid+'&timestamp='+data.timestamp+'&isSelf='+data.isSelf;
-                //$.cookie("cid", $('#formRes').text());
             } ,
              error:function(XMLHttpRequest, textStatus, errorThrown){
                 console.log(XMLHttpRequest);
