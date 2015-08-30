@@ -110,7 +110,13 @@ $(document).ready(function(){
             clearForm: true,
             resetForm: true,
             success: function(){ 
-                //$.cookie("cid", $('#formRes').text());
+                var bh = $(window).height();
+                var bw = $(window).width(); 
+                $("#resultBg").css({ 
+                    height:bh, 
+                    width:bw, 
+                    display:"block" 
+                });
             } ,
              error:function(XMLHttpRequest, textStatus, errorThrown){
                 console.log(XMLHttpRequest);
@@ -133,13 +139,7 @@ $(document).ready(function(){
         } else {
             $('#challengeForm').ajaxSubmit(options);
         } 
-        var bh = $(window).height();
-        var bw = $(window).width(); 
-        $("#resultBg1").css({ 
-            height:bh, 
-            width:bw, 
-            display:"block" 
-        });
+        
     });
 });
 

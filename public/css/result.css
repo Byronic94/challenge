@@ -14,7 +14,7 @@ a{
 }
 
 #logo{
-    background: url(../image/logo.png)  no-repeat;
+    background: url(../images/logo.png)  no-repeat;
     background-size: 100%;
     margin-right: 20px;
     width: 75px;
@@ -23,13 +23,13 @@ a{
 }
 
 body{
-    background: url(../image/resultBG.png);
+    background: url(../images/resultBG.png);
     background-size: 100%;
     text-align: center;
 }
 
 #success{
-    background: url(../image/resultS.png) no-repeat;
+    background: url(../images/resultS.png) no-repeat;
     background-size: 100%;
     position: absolute;
     left:20%;
@@ -39,7 +39,7 @@ body{
 }
 
 #fail{
-    background: url(../image/resultF.png) no-repeat;
+    background: url(../images/resultF.png) no-repeat;
     background-size: 100%;
     position: absolute;
     left:20%;
@@ -99,7 +99,7 @@ body{
 
 @media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
 body{
-    background: url(../image/resultBG.png) 0px -60px no-repeat;
+    background: url(../images/resultBG.png) 0px -60px no-repeat;
     background-size: 100%;
 }
 #outline{

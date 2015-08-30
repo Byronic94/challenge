@@ -1,5 +1,5 @@
 body {
-    background: url(../image/recordBG.jpg)  no-repeat;
+    background: url(../images/recordBG.jpg)  no-repeat;
     background-size: 100%;
     font-family:arial;
 }
@@ -22,7 +22,7 @@ body {
     font-weight: bold;
     font-size: 1.7em;
     position:absolute;
-    background: url(../image/btn.png) no-repeat;
+    background: url(../images/btn.png) no-repeat;
     background-size: 100%; 
     vertical-align:middle; 
     width:49%;
@@ -102,7 +102,7 @@ textarea{
 }
 
 #tipBg{
-    background: url(../image/tipBG.png);
+    background: url(../images/tipBG.png);
     background-size: 100%;
     display: none;
     z-index:1003;
@@ -125,7 +125,7 @@ a{
 }
 
 #logo{
-    background: url(../image/logo.png)  no-repeat;
+    background: url(../images/logo.png)  no-repeat;
     background-size: 100%;
     margin-right: 20px;
     width: 75px;

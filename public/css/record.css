@@ -1,5 +1,5 @@
 body {
-    background: url(../image/recordBG.jpg);
+    background: url(../images/recordBG.jpg);
     background-size: 100%;
     font-size: 16px;
 }
@@ -29,7 +29,7 @@ body {
 
 .secondline{
 	color: #ffca1c;
-	font-size: 1.6em;
+	font-size: 1.4em;
 }
 
 #content{
@@ -42,23 +42,23 @@ body {
 }
 #success{
 	position: absolute;
-	background: url(../image/success.png)  no-repeat;
+	background: url(../images/success.png)  no-repeat;
     background-size: 100%;
     width: 22%;
     left:8.6%;
     top:60%;
-    height:16.5%;
+    height:20%;
     border: 0;
 }
 
 #fail{
 	position: absolute;
-	background: url(../image/fail.png)  no-repeat;
+	background: url(../images/fail.png)  no-repeat;
     background-size: 100%;
     width: 22%;
     right:8.6%;
     top:60%;
-    height:16.5%;
+    height:20%;
     border: 0;
 }
 
@@ -120,30 +120,30 @@ body {
 
 #like{
     position: absolute;
-    background: url(../image/like.png)  no-repeat;
+    background: url(../images/like.png)  no-repeat;
     background-size: 100%;
     width: 22%;
     left:8.6%;
     top:60%;
-    height:16.5%;
+    height:20%;
     border: 0;
 }
 
 #unlike{
     position: absolute;
-    background: url(../image/unlike.png)  no-repeat;
+    background: url(../images/unlike.png)  no-repeat;
     background-size: 100%;
     width: 22%;
     right:8.6%;
     top:60%;
-    height:16.5%;
+    height:20%;
     border: 0;
 }
 
 
 #resultBg1{
 	position: absolute;
-	background: url(../image/successBG.png)  no-repeat;
+	background: url(../images/successBG.png)  no-repeat;
     background-size: 100%;
     display: none;
     z-index: 10001;
@@ -151,7 +151,7 @@ body {
 
 #resultBg2{
 	position: absolute;
-	background: url(../image/failBG.png)  no-repeat;
+	background: url(../images/failBG.png)  no-repeat;
     background-size: 100%;
     display: none;
     z-index: 10001;
@@ -254,7 +254,7 @@ a{
 }
 
 #back{
-    background: url(../image/back.png)  no-repeat;
+    background: url(../images/back.png)  no-repeat;
     background-size: 100%;
     height:30px;
     width: 98px;
@@ -262,7 +262,7 @@ a{
 }
 
 #logo{
-    background: url(../image/logo.png)  no-repeat;
+    background: url(../images/logo.png)  no-repeat;
     background-size: 100%;
     margin-right: 20px;
     width: 75px;
@@ -273,7 +273,7 @@ a{
 @media screen and (max-device-height: 480px){
     #success{
 	position: absolute;
-	background: url(../image/success.png)  no-repeat;
+	background: url(../images/success.png)  no-repeat;
     background-size: 100%;
     width: 22%;
     left:8.6%;
@@ -284,7 +284,7 @@ a{
 
 #fail{
 	position: absolute;
-	background: url(../image/fail.png)  no-repeat;
+	background: url(../images/fail.png)  no-repeat;
     background-size: 100%;
     width: 22%;
     right:8.6%;
@@ -295,7 +295,7 @@ a{
 
 #like{
     position: absolute;
-    background: url(../image/like.png)  no-repeat;
+    background: url(../images/like.png)  no-repeat;
     background-size: 100%;
     width: 22%;
     left:8.6%;
@@ -306,7 +306,7 @@ a{
 
 #unlike{
     position: absolute;
-    background: url(../image/unlike.png)  no-repeat;
+    background: url(../images/unlike.png)  no-repeat;
     background-size: 100%;
     width: 22%;
     right:8.6%;
