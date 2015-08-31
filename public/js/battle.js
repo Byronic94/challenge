@@ -133,7 +133,13 @@ $(document).ready(function(){
         } else {
             $('#challengeForm').ajaxSubmit(options);
         } 
-        
+        var bh = $(window).height();
+        var bw = $(window).width(); 
+        $("#resultBg1").css({ 
+            height:bh, 
+            width:bw, 
+            display:"block" 
+        });
     });
 });
 
@@ -141,7 +147,7 @@ wx.ready(function () {
     var sharetitle =  '壹校招一战到底，你也来试试？';
     var sharedesc = '只需30秒，向身边人或自己发出挑战，让大家一起来见证你的挑战历程！';
     var sharelink = '/authorize/0/0/0';
-        wx.onMenuShareTimeline({
+    wx.onMenuShareTimeline({
         title: sharetitle,
         link: sharelink,
         imgUrl: '../image/share.jpg',
