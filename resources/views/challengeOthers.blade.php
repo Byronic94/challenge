@@ -6,11 +6,12 @@
 
 @section('css')
 @parent
-    <link rel="stylesheet" type="text/css" href="/css/challenge.css">
-    <link rel="stylesheet" type="text/css" href="/css/battle.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/challenge.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/battle.css">
 @stop
 
 @section('content')
+    <div id="resultBg"></div>
     <div id="form">
         <form id="challengeForm"  accept-charset="UTF-8" action="/challengecommit">
         <input type="hidden" form="challengeForm" id="uid" name="uid"></input>
@@ -77,6 +78,6 @@
 
 @section('js')
     @parent
-    <script type="text/javascript" src="/js/battle.js"></script>
-    <script type="text/javascript" src="/js/jquery.form.js"></script>
+    <script type="text/javascript" src="/static/js/battle.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.form.js"></script>
 @stop

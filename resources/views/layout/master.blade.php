@@ -7,7 +7,7 @@
         <title>壹校招一战到底</title>
         @show
         @section('css')
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
         @show
     </head>
 
@@ -16,10 +16,10 @@
 	        @yield('content')
 	    </div>
 	    @section('js')
-	    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-	    <script src="/js/bootstrap.min.js"></script>
-        <script src="/js/jweixin-1.0.0.js"></script>
-        <script src="/js/jquery.cookie.js"></script>
+	    <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+	    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        <script stype="text/javascript" rc="/static/js/jweixin-1.0.0.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
 	    @show
         
     </body>

@@ -102,26 +102,20 @@ $(document).ready(function(){
         $("#uid").val($.cookie('uid'));
         var timestamp = parseInt(Date.parse(new Date())/1000);
         $("#timestamp").val(timestamp);
-        $("#isSelf").val(0);
+        $("#isSelf").val(1);
         var options = { 
             target:'#formRes', //后台将把传递过来的值赋给该元素 
             url:'/challengecommit', //提交给哪个执行 
-            type: 'GET',
-            success: function(){ 
-                alert("lslsls");
-                var bh = $(window).height();
-                var bw = $(window).width(); 
-                $("#resultBg").css({ 
-                    height:bh, 
-                    width:bw, 
-                    display:"block" 
-                });
+            type:'GET', 
+            success: function(data){ 
+                alert("sss");
+                //window.location.href='/challengecheck?uid='+data.uid+'&cid='+data.cid+'&timestamp='+data.timestamp+'&isSelf='+data.isSelf;
             } ,
              error:function(XMLHttpRequest, textStatus, errorThrown){
                 console.log(XMLHttpRequest);
                 console.log(textStatus);
                 console.log(errorThrown);
-            },
+            }
         }; 
         var name = $('#name').val();
         var keyword = $('#keyword').val();

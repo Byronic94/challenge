@@ -6,7 +6,7 @@
 
 @section('css')
     @parent
-    <link rel="stylesheet" type="text/css" href="/css/challenge.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/challenge.css">
 @stop
 
 @section('content')
@@ -76,6 +76,6 @@
 
 @section('js')
     @parent
-    <script type="text/javascript" src="/js/challenge.js"></script>
-    <script type="text/javascript" src="/js/jquery.form.js"></script>
+    <script type="text/javascript" src="/static/js/challenge.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.form.js"></script>
 @stop

@@ -6,7 +6,7 @@
 
 @section('css')
     @parent
-    <link rel="stylesheet" type="text/css" href="/css/initial.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/initial.css">
 @stop
 
 @section('content')
@@ -18,5 +18,5 @@
 
 @section('js')
     @parent
-    <script type="text/javascript" src="/js/initial.js"></script>
+    <script type="text/javascript" src="/static/js/initial.js"></script>
 @stop

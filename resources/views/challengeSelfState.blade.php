@@ -6,7 +6,7 @@
 
 @section('css')
     @parent
-    <link rel="stylesheet" type="text/css" href="/css/record.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/record.css">
 @stop
 
 @section('content')
@@ -83,5 +83,5 @@
 
 @section('js')
     @parent
-    <script type="text/javascript" src="/js/record.js"></script>
+    <script type="text/javascript" src="/static/js/record.js"></script>
 @stop
