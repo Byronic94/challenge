@@ -1,18 +1,7 @@
 body {
     background: url(../images/challengeBG.jpg)  no-repeat;
     background-size: 100%;
-}
-
-textarea{
-    text-indent: 4em;
-}
-
-#form{
-    top:5%;
-}
-
-#challengeGo{
-	font-size:2em;
+    font-family:arial;
 }
 
 #resultBg{
