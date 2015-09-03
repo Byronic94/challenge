@@ -2,7 +2,9 @@ $(document).ready(function(){
 
     $.ajax({
         type: 'GET',
-        url: '/getwxsignpack' ,
+        url: "http://www.1xiaozhao.com:8080/getwxsignpack?callback=?&url=" 
+        + encodeURIComponent(window.location.href),
+        dataType:"json",
         success: function(data){
          wx.config({
             debug: false, 
@@ -15,38 +17,80 @@ $(document).ready(function(){
             'onMenuShareTimeline',    
             'onMenuShareAppMessage',    
             'onMenuShareQQ',    
-            'onMenuShareWeibo',    
-            'hideMenuItems',    
-            'showMenuItems',    
-            'hideAllNonBaseMenuItem',    
-            'showAllNonBaseMenuItem',    
-            'translateVoice',    
-            'startRecord',    
-            'stopRecord',    
-            'onRecordEnd',    
-            'playVoice',    
-            'pauseVoice',    
-            'stopVoice',    
-            'uploadVoice',    
-            'downloadVoice',    
-            'chooseImage',    
-            'previewImage',    
-            'uploadImage',    
-            'downloadImage',    
-            'getNetworkType',    
-            'openLocation',    
-            'getLocation',    
-            'hideOptionMenu',    
-            'showOptionMenu',    
-            'closeWindow',    
-            'scanQRCode',    
-            'chooseWXPay',    
-            'openProductSpecificView',    
-            'addCard',    
-            'chooseCard',    
-            'openCard' 
+            'onMenuShareWeibo'
             ]
         });
+         wx.ready(function () {
+    var sharetitle =  '壹校招一战到底，你也来试试？';
+    var sharedesc = '只需30秒，向身边人或自己发出挑战，让大家一起来见证你的挑战历程！';
+    var sharelink = '/authorize/0/0/0';
+    wx.onMenuShareTimeline({
+        title: sharetitle,
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+
+        },
+        cancel: function () { 
+
+        }
+    });
+
+
+    wx.onMenuShareAppMessage({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        type: 'link', // 分享类型,music、video或link，不填默认为link
+        success: function () { 
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+
+    wx.onMenuShareQQ({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+       },
+       cancel: function () { 
+           // 用户取消分享后执行的回调函数
+       }
+    });
+    
+    wx.onMenuShareWeibo({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+        },
+       cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    
+    wx.onMenuShareQZone({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+       },
+       cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+});
+
         } ,
         error:function(XMLHttpRequest, textStatus, errorThrown){
             console.log(XMLHttpRequest);
@@ -139,73 +183,3 @@ $(document).ready(function(){
     });
 });
 
-wx.ready(function () {
-    var sharetitle =  '壹校招一战到底，你也来试试？';
-    var sharedesc = '只需30秒，向身边人或自己发出挑战，让大家一起来见证你的挑战历程！';
-    var sharelink = '/authorize/0/0/0';
-    wx.onMenuShareTimeline({
-        title: sharetitle,
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        success: function () { 
-
-        },
-        cancel: function () { 
-
-        }
-    });
-
-
-    wx.onMenuShareAppMessage({
-        title: sharetitle,
-        desc: sharedesc, 
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        type: 'link', // 分享类型,music、video或link，不填默认为link
-        success: function () { 
-            // 用户确认分享后执行的回调函数
-        },
-        cancel: function () { 
-            // 用户取消分享后执行的回调函数
-        }
-    });
-
-    wx.onMenuShareQQ({
-        title: sharetitle,
-        desc: sharedesc, 
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        success: function () { 
-           // 用户确认分享后执行的回调函数
-       },
-       cancel: function () { 
-           // 用户取消分享后执行的回调函数
-       }
-    });
-    
-    wx.onMenuShareWeibo({
-        title: sharetitle,
-        desc: sharedesc, 
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        success: function () { 
-           // 用户确认分享后执行的回调函数
-        },
-       cancel: function () { 
-            // 用户取消分享后执行的回调函数
-        }
-    });
-    
-    wx.onMenuShareQZone({
-        title: sharetitle,
-        desc: sharedesc, 
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        success: function () { 
-           // 用户确认分享后执行的回调函数
-       },
-       cancel: function () { 
-            // 用户取消分享后执行的回调函数
-        }
-    });
-});

@@ -2,7 +2,9 @@ $(document).ready(function(){
 
         $.ajax({
         type: 'GET',
-        url: '/getwxsignpack' ,
+        url: "http://www.1xiaozhao.com:8080/getwxsignpack?callback=?&url=" 
+        + encodeURIComponent(window.location.href),
+        dataType:"json",
         success: function(data){
          wx.config({
             debug: false, 
@@ -15,38 +17,83 @@ $(document).ready(function(){
             'onMenuShareTimeline',    
             'onMenuShareAppMessage',    
             'onMenuShareQQ',    
-            'onMenuShareWeibo',    
-            'hideMenuItems',    
-            'showMenuItems',    
-            'hideAllNonBaseMenuItem',    
-            'showAllNonBaseMenuItem',    
-            'translateVoice',    
-            'startRecord',    
-            'stopRecord',    
-            'onRecordEnd',    
-            'playVoice',    
-            'pauseVoice',    
-            'stopVoice',    
-            'uploadVoice',    
-            'downloadVoice',    
-            'chooseImage',    
-            'previewImage',    
-            'uploadImage',    
-            'downloadImage',    
-            'getNetworkType',    
-            'openLocation',    
-            'getLocation',    
-            'hideOptionMenu',    
-            'showOptionMenu',    
-            'closeWindow',    
-            'scanQRCode',    
-            'chooseWXPay',    
-            'openProductSpecificView',    
-            'addCard',    
-            'chooseCard',    
-            'openCard' 
+            'onMenuShareWeibo',
+            'chooseImage'
             ]
         });
+         wx.ready(function () {
+    var sharetitle =  $("#content").text()+" 快来看看！";
+    var sharedesc = $("#content").text()+$("#stake").text()+" 挑战成功与否，你怎么看？";
+    var sharelink = '/authorize/'+res['uid']+"/"+res['cid']+res['isSelf'];
+    if($("#typeof").text()=='2'){
+        sharelink = '/authorize/'+$("#shareuid").text()+"/"+res['cid']+res['isSelf'];
+    }
+    wx.onMenuShareTimeline({
+        title: sharetitle,
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+
+        },
+        cancel: function () { 
+
+        }
+    });
+
+
+    wx.onMenuShareAppMessage({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        type: 'link', // 分享类型,music、video或link，不填默认为link
+        success: function () { 
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+
+    wx.onMenuShareQQ({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+       },
+       cancel: function () { 
+           // 用户取消分享后执行的回调函数
+       }
+    });
+    
+    wx.onMenuShareWeibo({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+        },
+       cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    
+    wx.onMenuShareQZone({
+        title: sharetitle,
+        desc: sharedesc, 
+        link: sharelink,
+        imgUrl: '../image/share.jpg',
+        success: function () { 
+           // 用户确认分享后执行的回调函数
+       },
+       cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+});
         } ,
         error:function(XMLHttpRequest, textStatus, errorThrown){
             console.log(XMLHttpRequest);
@@ -344,78 +391,6 @@ $("#reject").click(function(){
 
 
 
-wx.ready(function () {
-    var sharetitle =  $("#content").text()+" 快来看看！";
-    var sharedesc = $("#content").text()+$("#stake").text()+" 挑战成功与否，你怎么看？";
-    var sharelink = '/authorize/'+res['uid']+"/"+res['cid']+res['isSelf'];
-    if($("#typeof").text()=='2'){
-        sharelink = '/authorize/'+$("#shareuid").text()+"/"+res['cid']+res['isSelf'];
-    }
-    wx.onMenuShareTimeline({
-        title: sharetitle,
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        success: function () { 
 
-        },
-        cancel: function () { 
-
-        }
-    });
-
-
-    wx.onMenuShareAppMessage({
-        title: sharetitle,
-        desc: sharedesc, 
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        type: 'link', // 分享类型,music、video或link，不填默认为link
-        success: function () { 
-            // 用户确认分享后执行的回调函数
-        },
-        cancel: function () { 
-            // 用户取消分享后执行的回调函数
-        }
-    });
-
-    wx.onMenuShareQQ({
-        title: sharetitle,
-        desc: sharedesc, 
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        success: function () { 
-           // 用户确认分享后执行的回调函数
-       },
-       cancel: function () { 
-           // 用户取消分享后执行的回调函数
-       }
-    });
-    
-    wx.onMenuShareWeibo({
-        title: sharetitle,
-        desc: sharedesc, 
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        success: function () { 
-           // 用户确认分享后执行的回调函数
-        },
-       cancel: function () { 
-            // 用户取消分享后执行的回调函数
-        }
-    });
-    
-    wx.onMenuShareQZone({
-        title: sharetitle,
-        desc: sharedesc, 
-        link: sharelink,
-        imgUrl: '../image/share.jpg',
-        success: function () { 
-           // 用户确认分享后执行的回调函数
-       },
-       cancel: function () { 
-            // 用户取消分享后执行的回调函数
-        }
-    });
-});
 
 });
