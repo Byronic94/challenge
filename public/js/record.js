@@ -24,9 +24,9 @@ $(document).ready(function(){
            wx.ready(function () {
             var sharetitle =  $("#content").text()+" 快来看看！";
             var sharedesc = $("#content").text()+$("#stake").text()+" 挑战成功与否，你怎么看？";
-            var sharelink = '/authorize/'+res['uid']+"/"+res['cid']+res['isSelf'];
+            var sharelink = 'http://120.25.234.214:8080/authorize/'+res['uid']+"/"+res['cid']+"/"+res['isSelf'];
             if($("#typeof").text()=='2'){
-                sharelink = '/authorize/'+$("#shareuid").text()+"/"+res['cid']+res['isSelf'];
+                sharelink = 'http://120.25.234.214:8080/authorize/'+$("#shareuid").text()+"/"+res['cid']+"/"+res['isSelf'];
             }
             wx.onMenuShareTimeline({
                 title: sharetitle,

@@ -23,7 +23,7 @@ $(document).ready(function(){
            wx.ready(function () {
             var sharetitle =  '壹校招一战到底，你也来试试？';
             var sharedesc = '只需30秒，向身边人或自己发出挑战，让大家一起来见证你的挑战历程！';
-            var sharelink = '/authorize/0/0/1';
+            var sharelink = 'http://120.25.234.214:8080/authorize/0/0/1';
             wx.onMenuShareTimeline({
                 title: sharetitle,
                 link: sharelink,

@@ -23,7 +23,7 @@ $(document).ready(function(){
      wx.ready(function () {
       var sharetitle =  '壹校招一战到底，你也来试试？';
       var sharedesc = '只需30秒，向身边人或自己发出挑战，让大家一起来见证你的挑战历程！';
-      var sharelink = '/authorize/0/0/0';
+      var sharelink = 'http://120.25.234.214:8080/authorize/0/0/0';
       wx.onMenuShareTimeline({
         title: sharetitle,
         link: sharelink,
@@ -144,19 +144,13 @@ $("#challengeGo").click(function(){
   $("#uid").val($.cookie('uid'));
   var timestamp = parseInt(Date.parse(new Date())/1000);
   $("#timestamp").val(timestamp);
-  $("#isSelf").val(0);
+  $("#isSelf").val(1);
   var options = { 
             target:'#formRes', //后台将把传递过来的值赋给该元素 
             url:'/challengecommit', //提交给哪个执行 
             type:'GET', 
             success: function(data){ 
-              var bh = $(window).height();
-              var bw = $(window).width(); 
-              $("#resultBg").css({ 
-                height:bh, 
-                width:bw, 
-                display:"block" 
-              });
+              window.location.href = "/challengecheck?uid="+$.cookie('uid')+"&cid="+data.cid+"&timestamp="+timestamp+"&isSelf=1";
             } ,
             error:function(XMLHttpRequest, textStatus, errorThrown){
               console.log(XMLHttpRequest);
